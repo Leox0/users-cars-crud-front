@@ -1,0 +1,21 @@
+<h3>User Add</h3>
+<button [routerLink]="['/','users']" type="button" class="btn btn-info mb-3">Users</button>
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="userName">User Name</label>
+        <input type="text" class="form-control" id="userName" placeholder="User Name" formControlName="name">
+      </div>
+      <div class="form-group">
+        <label for="surname">Surname</label>
+        <input type="text" class="form-control" id="surname" placeholder="Surname" formControlName="surname">
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="text" class="form-control" id="age" placeholder="Age" formControlName="age">
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">Add</button>
+    </form>
+  </div>
+</div>

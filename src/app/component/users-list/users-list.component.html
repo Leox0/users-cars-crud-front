@@ -1,0 +1,11 @@
+<h3>User list</h3>
+<button [routerLink]="['/','user-add']" type="button" class="btn btn-success mb-3">Add user</button>
+<div *ngFor="let user of usersList">
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{user.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{user.surname}}</h6>
+      <h7 class="card-subtitle mb-2 text-muted">age: {{user.age}}</h7>
+    </div>
+  </div>
+</div>
