@@ -1,1 +1,24 @@
-<p>user-detail works!</p>
+<h3>User Details</h3>
+<button [routerLink]="['/','users']" type="button" class="btn btn-info mb-3">Users</button>
+<div *ngIf="user; then hasData else noData"></div>
+<ng-template #hasData>
+  <div class="card" style = "background-color: #f7f7f7">
+    <div class="card-body">
+      <h5 class="card-title">{{user.name}} {{user.surname}}</h5>
+      <h7 class="card-subtitle my-2 text-muted">age: {{user.age}}</h7>
+      <h6 class="card-subtitle my-2 ">Car list: </h6>
+      <div *ngFor="let car of user.carList">
+        <div class=mat-card>
+          <div class="mat-card-body mb-3 " style = "background-color: #cce5ff">
+            <div class = ml-3>
+              <h7 class="mat-card-subtitle mb-2 text-muted">id: {{car.id}}</h7>
+              <h6 class="mat-card-header">{{car.brand}} {{car.model}}</h6>
+              <h7 class="mat-card-subtitle mb-2 text-muted">year: {{car.year}}</h7>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #noData>No data.</ng-template>

@@ -4,7 +4,9 @@ import {Observable} from 'rxjs';
 import {UserWithoutCars} from '../model/user-without-cars.model';
 import {environment} from '../../environments/environment';
 import {CarView} from '../model/car-view.model';
-import {CarDto} from '../model/car-dto.model';
+import {CarDto} from '../model/car-request.model';
+import {UserRequest} from '../model/user-request';
+import {UserWithCars} from '../model/user-with-cars.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +20,12 @@ export class UsersCarsService {
     return this.http.get<UserWithoutCars[]>(`${environment.API_USERS}`);
   }
 
-  public addUser(user: UserWithoutCars): Observable<UserWithoutCars> {
-    return this.http.post<UserWithoutCars>(`${environment.API_USERS}`, user);
+  public getUser(id: string): Observable<UserWithCars> {
+    return this.http.get<UserWithCars>(`${environment.API_USERS}/cars/${id}`);
+  }
+
+  public addUser(user: UserRequest): Observable<UserRequest> {
+    return this.http.post<UserRequest>(`${environment.API_USERS}`, user);
   }
 
   public getCars(): Observable<CarView[]> {

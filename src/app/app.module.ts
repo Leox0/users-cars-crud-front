@@ -13,6 +13,8 @@ import { UserAddComponent } from './component/user-add/user-add.component';
 import { CarAddComponent } from './component/car-add/car-add.component';
 import { UserDetailComponent } from './component/user-detail/user-detail.component';
 import { CarsListComponent } from './component/cars-list/cars-list.component';
+import { MatCardModule } from '@angular/material/card';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,13 +26,15 @@ import { CarsListComponent } from './component/cars-list/cars-list.component';
     UserAddComponent,
     CarAddComponent,
     UserDetailComponent,
-    CarsListComponent
+    CarsListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,7 @@ import {UsersCarsService} from '../../service/users-cars.service';
 import {Router} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserWithoutCars} from '../../model/user-without-cars.model';
-import {CarDto} from '../../model/car-dto.model';
+import {CarDto} from '../../model/car-request.model';
 
 @Component({
   selector: 'app-car-add',

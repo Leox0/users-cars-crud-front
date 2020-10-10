@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UsersCarsService} from '../../service/users-cars.service';
 import {Router} from '@angular/router';
 import {UserWithoutCars} from '../../model/user-without-cars.model';
+import {UserRequest} from '../../model/user-request';
 
 @Component({
   selector: 'app-user-add',
@@ -26,7 +27,7 @@ export class UserAddComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const user: UserWithoutCars = this.userForm.value;
+    const user: UserRequest = this.userForm.value;
     this.usersCarsService.addUser(user).subscribe(() => {
       this.router.navigate(['/', 'users']);
     });
